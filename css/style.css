@@ -24,14 +24,10 @@ body {
     font-family: 'Inter';
 }
 
-#body {
-    height: 200vh;
-}
-
 /* ----------------- HEADER ----------------- */
 
 #page-header {
-    background-color: var(--darkRed);
+    background-color: var(--lightRed);
     height: 15vh;
     display: flex;
     align-items: center;
@@ -40,6 +36,7 @@ body {
     top: 0;
     width: 100%;
     transition: var(--transition);
+    z-index: 2;
 }
 
 #header-logo a {
@@ -79,26 +76,31 @@ body {
 }
 
 /* navbar quando a página é rolada */
+
 #page-header.scrolled {
-    background-color: transparent;
+    background-color: var(--lightGrey);
     height: 10vh;
 }
 
-#page-header.scrolled #header-logo a {
+#page-header.scrolled 
+#header-logo a {
     font-size: 2.5rem;
     color: var(--darkGrey);
 }
 
-#page-header.scrolled .header-link a {
+#page-header.scrolled 
+.header-link a {
     color: var(--darkGrey);
     border-bottom: 1px solid var(--lightRed);
     letter-spacing: 0;
     font-size: 1rem;
 }
-#page-header.scrolled .header-link a:hover {
+#page-header.scrolled 
+.header-link a:hover {
     color: var(--lightRed);
 }
-#page-header.scrolled .header-link.active-link a {
+#page-header.scrolled 
+.header-link.active-link a {
     color: var(--middleGrey);
     border-bottom: none;
 }

@@ -1,0 +1,71 @@
+/* ============= MENSAGEM DE BEM-VINDO ============= */
+
+#welcome-container {
+    height: 75vh;
+    padding-top: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lora';
+    text-align: center;
+}
+#welcome-message {
+    font-size: clamp(1rem, 8vw, 2.5rem);
+    padding: .5rem 0;
+    color: var(--lightRed);
+    position: relative;
+}
+#blog-description {
+    margin-top: 10px;
+    font-size: clamp(.5rem, 4vw, 1.2rem);
+    color: var(--darkGrey);
+}
+#learn-more-btn {
+    background-color: var(--lightRed);
+    font-family: 'Inter';
+    font-size: clamp(.5rem, 4vw, 1.2rem);
+    color: var(--lightGrey);
+    margin-top: 20px;
+    padding: .5rem;
+    transition: var(--transition);
+}
+#learn-more-btn:hover {
+    background-color: var(--darkRed);
+}
+
+/* animação das boas-vindas */
+
+#welcome-message::before,
+#welcome-message::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+#welcome-message::before {
+    background-color: var(--lightGrey);
+    animation: textreveal 2s 1s forwards;
+}
+#welcome-message::after {
+    background-color: var(--darkRed);
+    width: .05em;
+    animation: textreveal 2s 1s forwards,
+        cursor .5s steps(2, start) infinite;
+}
+
+@keyframes textreveal {
+    to {left: 100%;}
+}
+@keyframes cursor {
+    to {visibility: hidden;}
+}
+
+/* ============= POSTS RECENTES ============= */
+
+#recent-posts-container {
+    height: 100vh;
+}
+
