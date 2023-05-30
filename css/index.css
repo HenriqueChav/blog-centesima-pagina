@@ -1,7 +1,7 @@
 /* ============= MENSAGEM DE BEM-VINDO ============= */
 
 #welcome-container {
-    height: 75vh;
+    height: 95vh;
     padding-top: 15vh;
     display: flex;
     flex-direction: column;
@@ -20,6 +20,7 @@
     margin-top: 10px;
     font-size: clamp(.5rem, 4vw, 1.2rem);
     color: var(--darkGrey);
+    font-family: 'Inter';
 }
 #learn-more-btn {
     background-color: var(--lightRed);
@@ -66,6 +67,104 @@
 /* ============= POSTS RECENTES ============= */
 
 #recent-posts-container {
-    height: 100vh;
+    background-image: linear-gradient(to bottom, var(--lightGrey), var(--middleGrey));
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5vh;
+}
+#recent-posts-container h1 {
+    font-family: 'Lora';
+    text-transform: capitalize;
+    text-align: center;
+    font-size: clamp(1rem, 8vw, 2.2rem);
+    margin: 0;
 }
 
+#recent-posts-carousel {
+    margin: 0 1rem;
+    padding-bottom: 2rem;
+    position: relative;
+}
+.arrow-left-btn,
+.arrow-right-btn {
+    position: absolute;
+    color: var(--lightRed);
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+}
+.arrow-left-btn {
+    left: 0;
+}
+.arrow-right-btn {
+    right: 0;
+}
+.fa-arrow-left,
+.fa-arrow-right {
+    padding: .5rem;
+    opacity: .5;
+    transition: var(--transition);
+}
+.fa-arrow-left:hover,
+.fa-arrow-right:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+.fa-arrow-left {
+    background-image: linear-gradient(to left, transparent, var(--middleGrey));
+}
+.fa-arrow-right {
+    background-image: linear-gradient(to right, transparent, var(--middleGrey))
+}
+
+#recent-posts-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    overflow: hidden;
+}
+.recent-post {
+    background-color: var(--lightGrey);
+    width: 300px;
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+.recent-post-img {
+    overflow: hidden;
+    height: 40%;
+}
+.recent-post-img img {
+    width: 100%;
+}
+.recent-post-title {
+    color: var(--lightRed);
+    font-family: 'Lora';
+    font-size: clamp(1.2rem);
+    padding: .8rem;
+}
+.recent-post-title a {
+    color: var(--lightRed);
+}
+.recent-post-title a:hover {
+    text-decoration: underline var(--darkRed);
+}
+.recent-post-desc {
+    font-size: clamp(.5rem, 4vw, 1.2rem);
+    padding: 0 .8rem;
+}
+.recent-post-link {
+    display: inline-block;
+    padding: .5rem;
+    margin: .8rem;
+    background-color: var(--darkRed);
+    color: var(--lightGrey);
+    transition: var(--transition);
+}
+.recent-post-link:hover {
+    background-color: var(--lightRed);
+}

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>100°pág. | Blog</title>
 </head>
 <body>
@@ -36,8 +37,39 @@
 
 
     <!-- RECENT POSTS -->
-    <section id="recent-posts-container">
-    </section>
+    <article id="recent-posts-container">
+        <h1>Últimos textos</h1>
+        <section id="recent-posts-carousel">
+            <button class="arrow-left-btn"><i class="fa-sharp fa-solid fa-arrow-left"></i></button>
+            <button class="arrow-right-btn"><i class="fa-sharp fa-solid fa-arrow-right"></i></button>
+            <div id="recent-posts-wrapper">
+                <article class="recent-post">
+                    <div class="recent-post-img">
+                        <a href="#"><img src="./assets/diarioembranco.jpg" alt="diário em branco"></a>
+                    </div>
+                    <h2 class="recent-post-title"><a href="#">Artigo sobre um diário em branco</a></h2>
+                    <p class="recent-post-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla architecto magnam qui debitis repellendus neque delectus! Dolores dolorum distinctio error(...)</p>
+                    <a class="recent-post-link" href="#">continuar lendo</a>
+                </article>
+                <article class="recent-post">
+                    <div class="recent-post-img">
+                        <a href="#"><img src="./assets/paginaembranco.jpg" alt="diário em branco"></a>
+                    </div>
+                    <h2 class="recent-post-title"><a href="#">Papel, caneta e café</a></h2>
+                    <p class="recent-post-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus porro quaerat eius itaque est. Quaerat accusantium nostrum itaque rem aut.(...)</p>
+                    <a class="recent-post-link" href="#">continuar lendo</a>
+                </article>
+                <article class="recent-post">
+                    <div class="recent-post-img">
+                        <a href="#"><img src="./assets/folhasamassadas.jpg" alt="diário em branco"></a>
+                    </div>
+                    <h2 class="recent-post-title"><a href="#">Sobre abandonar ideias</a></h2>
+                    <p class="recent-post-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio molestias dolorem, recusandae a quidem molestiae quis ut dolores non nam.(...)</p>
+                    <a class="recent-post-link" href="#">continuar lendo</a>
+                </article>
+            </div>
+        </section>
+    </article>
     <!-- END OF RECENT POSTS -->
 
 
@@ -48,6 +80,7 @@
     <!-- END OF PAGE FOOTER -->
 
     <script src="./js/app.js"></script>
+    <script src="./js/index.js"></script>
 
 </body>
 </html>

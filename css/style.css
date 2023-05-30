@@ -151,5 +151,5 @@ body {
 }
 #page-footer p {
     color: var(--lightGrey);
-    font-size: 1rem;
+    font-size: clamp(.5rem, 4vw, 1.2rem);
 }
