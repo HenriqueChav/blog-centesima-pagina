@@ -153,3 +153,12 @@ body {
     color: var(--lightGrey);
     font-size: clamp(.5rem, 4vw, 1.2rem);
 }
+
+/* ----------------- COMUM ENTRE PÁGINAS ----------------- */
+
+a.text-link {
+    color: var(--lightRed);
+}
+a.text-link:hover {
+    text-decoration: 1px underline var(--darkRed);
+}

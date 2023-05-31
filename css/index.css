@@ -77,6 +77,7 @@
 #recent-posts-container h1 {
     font-family: 'Lora';
     text-transform: capitalize;
+    font-weight: normal;
     text-align: center;
     font-size: clamp(1rem, 8vw, 2.2rem);
     margin: 0;
@@ -144,7 +145,7 @@
 .recent-post-title {
     color: var(--lightRed);
     font-family: 'Lora';
-    font-size: clamp(1.2rem);
+    font-size: 1.2rem;
     padding: .8rem;
 }
 .recent-post-title a {
