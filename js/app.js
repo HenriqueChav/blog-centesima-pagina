@@ -1,5 +1,9 @@
-// INSERÇÃO DO FAVICON
-const setFavicon = (emoji) => {
+/* ==================== FAVICON ==================== */
+// Fonte: https://stackoverflow.com/questions/59431371/use-emoji-as-favicon-in-websites
+
+setFavicon('📕');
+
+function setFavicon(emoji) {
     const canvas = document.createElement('canvas');
     canvas.height = 32;
     canvas.width = 32;
@@ -9,26 +13,38 @@ const setFavicon = (emoji) => {
     ctx.fillText(emoji, -2, 24);
   
     const favicon = document.querySelector('link[rel=icon]');
-    if (favicon) { favicon.href = canvas.toDataURL(); }
+    if (favicon) favicon.href = canvas.toDataURL();
 }
   
-setFavicon('📕');
 
-// INSERÇÃO DO ANO NO FOOTER
+/* ==================== ANO NO FOOTER ==================== */
+
 const footerYear = document.querySelector('#footer-year');
+
 const currentDate = new Date();
+const currentYear = currentDate.getFullYear();
 
-footerYear.textContent = currentDate.getFullYear();
+footerYear.textContent = currentYear;
 
-// ANIMAÇÃO DA NAVBAR
+
+/* ==================== ANIMAÇÃO DA NAVBAR ==================== */
+// Fonte: https://stackoverflow.com/questions/44109314/javascript-calculate-with-viewport-width-height 
+
 const pageHeader = document.querySelector('#page-header');
+let windowHeight = getWindowHeight();
 
-addEventListener('scroll', (e) => {
-    const height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    // equivalente da altura calculada pelo css
-    if (window.scrollY >= 0.2*height) {
+addEventListener('resize', (event) => windowHeight = getWindowHeight());
+
+addEventListener('scroll', (event) => {
+    if (window.scrollY >= 0.2 * windowHeight) {
         pageHeader.classList.add('scrolled');
     } else {
         pageHeader.classList.remove('scrolled');
     }
 });
+
+// Funções auxiliares
+
+function getWindowHeight() {
+    return Math.max( document.documentElement.clientHeight, window.innerHeight || 0 );
+}

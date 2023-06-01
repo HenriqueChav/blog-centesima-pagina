@@ -1,33 +1,42 @@
-// funcionamento do carrossel de posts recentes
+/* =============== CARROSSEL DE POSTS RECENTES =============== */
 
-const carouselLeftBtn = document.querySelector('.fa-arrow-left');
-const carouselRightBtn = document.querySelector('.fa-arrow-right');
-let idx = 0;
+const leftButton = document.querySelector('.fa-arrow-left');
+const rightButton = document.querySelector('.fa-arrow-right');
 
-const carouselPosts = document.querySelectorAll('.recent-post');
-const qntCarouselPosts = carouselPosts.length;
+const recentPosts = document.querySelectorAll('.recent-post');
+const qntRecentPosts = recentPosts.length;
 
-function translatePost(pixels) {
-    carouselPosts.forEach(post => post.style.transform = `translateX(${pixels}px)`); 
+/**
+ * Os cards de posts recentes no carrossel possuem:
+ * -> 300px de largura;
+ * -> 15px de gap entre eles.
+ */
+
+let position = (qntRecentPosts - 1) / 2 * 315;
+translatePosts(position);
+
+let currentPost = 0;
+
+leftButton.addEventListener('click', (event) => {
+    if (currentPost === 0) return;
+
+    position += 315;
+    translatePosts(position);
+    
+    currentPost -= 1;
+});
+
+rightButton.addEventListener('click', (event) => {
+    if (currentPost === qntRecentPosts - 1) return;
+    
+    position -= 315;
+    translatePosts(position);
+    
+    currentPost += 1;
+});
+
+// Funções auxiliares
+
+function translatePosts(pixels) {
+    recentPosts.forEach( post => post.style.transform = `translateX(${pixels}px)` ); 
 }
-
-// fazendo o carrossel começar pelo primeiro item, apesar do justify-content
-// cada item do carrossel tem 300px de largura + 15px de gap entre eles
-let position = (qntCarouselPosts - 1) / 2 * 315;
-translatePost(position);
-
-carouselLeftBtn.addEventListener('click', (e) => {
-    if (idx !== 0) {
-        position += 315;
-        idx -= 1;
-        translatePost(position);
-    }
-});
-carouselRightBtn.addEventListener('click', (e) => {
-    if (idx !== qntCarouselPosts-1) {
-        position -= 315;
-        idx += 1;
-        translatePost(position);
-    }
-});
-
