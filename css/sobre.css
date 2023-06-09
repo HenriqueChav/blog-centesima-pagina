@@ -31,4 +31,64 @@
 
 #inspirations p {
     color: var(--lightGrey);
+    margin-bottom: clamp(20px, 3vh, 50px);
 }
+
+#inspirations-icons {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    gap: 1rem 1rem;
+    list-style-type: none;
+    justify-items: center;
+}
+
+.inspiration-icon {
+    position: relative;
+}
+
+.inspiration-icon:hover .icon-tooltip {
+    visibility: visible;
+}
+
+.icon-tooltip {
+    position: absolute;
+    visibility: hidden;
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    text-align: center;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: 1;
+    color: var(--lightGrey);
+    background-color: rgba(0, 0, 0, .6);
+    border-radius: .2rem;
+    padding: 1rem;
+    transition: var(--transition);
+}
+.icon-tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -10px;
+    border: 10px solid;
+    border-color: transparent transparent rgba(0, 0, 0, .6) transparent;
+}
+
+.inspiration-icon img {
+    border-radius: 50%;
+    width: 100%;
+    max-width: 225px;
+    transition: var(--transition);
+}
+
+.inspiration-icon img:hover {
+    opacity: .7;
+}
+
+
+@media screen and (min-width: 992px) {
+    #inspirations-icons {
+        grid-template: 1fr / repeat(4, 1fr);
+    }
+} 
